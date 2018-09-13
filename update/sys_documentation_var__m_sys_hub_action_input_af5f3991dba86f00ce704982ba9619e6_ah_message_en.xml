@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="ah_message" label="Message" language="en" table="var__m_sys_hub_action_input_af5f3991dba86f00ce704982ba9619e6">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>ah_message</element>
+            <help/>
+            <hint/>
+            <label>Message</label>
+            <language>en</language>
+            <name>var__m_sys_hub_action_input_af5f3991dba86f00ce704982ba9619e6</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>gianpaolo.pagano</sys_created_by>
+            <sys_created_on>2018-09-13 21:36:25</sys_created_on>
+            <sys_id>275f3991dba86f00ce704982ba9619fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Message</sys_name>
+            <sys_package display_value="Gianpaolo_Pagano_Custom_Activities" source="x_snc_gpm_act">d7be659ddbe46f00ce704982ba961927</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Gianpaolo_Pagano_Custom_Activities">d7be659ddbe46f00ce704982ba961927</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_action_input_af5f3991dba86f00ce704982ba9619e6_ah_message_en</sys_update_name>
+            <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+            <sys_updated_on>2018-09-13 21:36:25</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

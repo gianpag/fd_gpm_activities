@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_step_instance">
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Post an Approval Request on Slack">28e0b191db286f00ce704982ba9619b9</action>
+        <cid>223a3faa-3f78-4fee-becf-63a2b084b0db</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Build Payload</label>
+        <order>1</order>
+        <outputs/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_class_name>sys_hub_step_instance</sys_class_name>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:10</sys_created_on>
+        <sys_id>05e0f191db286f00ce704982ba96196d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Build Payload</sys_name>
+        <sys_package display_value="Gianpaolo_Pagano_Custom_Activities" source="x_snc_gpm_act">d7be659ddbe46f00ce704982ba961927</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Gianpaolo_Pagano_Custom_Activities">d7be659ddbe46f00ce704982ba961927</sys_scope>
+        <sys_update_name>sys_hub_step_instance_05e0f191db286f00ce704982ba96196d</sys_update_name>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 21:36:24</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=05e0f191db286f00ce704982ba96196d"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>05e0f191db286f00ce704982ba96196d</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:12</sys_created_on>
+        <sys_id>19e0f191db286f00ce704982ba9619d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 20:33:12</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>05e0f191db286f00ce704982ba96196d</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:12</sys_created_on>
+        <sys_id>51e0f191db286f00ce704982ba9619d3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 21:36:24</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+	var payload = {
+    	            text: "Here's a new request from USER",
+				    channel: 'testing',
+			        attachments: [{
+					 	fallback: 'Approve this request on https://cmp2018demo.service-now.com',
+					 	actions: [{
+						 		type: 'button',
+						 		text: 'Approve',
+						 		url: 'https://cmp2018demo.service-now.com'
+            }]
+         }]
+    	};
+  	payload.text = inputs.message;
+  	
+  	var channel = inputs.channel.trim();
+  	if(!gs.nil(channel))
+  		payload.channel = channel;
+  
+    //if(!gs.nil(inputs.button_text))
+  	//	payload.attachments[0].actions[0].text = inputs.button_text;
+  
+  	if(!gs.nil(inputs.username))
+  		payload.username = inputs.username;
+  
+    if(!gs.nil(inputs.approval_link))
+  		payload.attachments[0].actions[0].url = inputs.approval_link;
+	    payload.attachments[0].fallback = 'Approve this request on ' + inputs.approval_link; 
+  
+  
+    // Static config
+    payload.attachments[0].actions[0].type = 'button'; 
+    
+
+    if(!gs.nil(inputs.icon_emoji))
+  		payload.icon_emoji = inputs.icon_emoji;
+  
+  	outputs.payload = JSON.stringify(payload);
+})(inputs, outputs);</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=05e0f191db286f00ce704982ba96196d"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>05e0f191db286f00ce704982ba96196d</id>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:12</sys_created_on>
+        <sys_id>5de0f191db286f00ce704982ba9619d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 20:33:12</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_link</field>
+        <id>05e0f191db286f00ce704982ba96196d</id>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:12</sys_created_on>
+        <sys_id>d1e0f191db286f00ce704982ba9619d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 20:33:12</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_05e0f191db286f00ce704982ba96196d</table>
+        <value>{{action.approval_link}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>button_text</field>
+        <id>05e0f191db286f00ce704982ba96196d</id>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:12</sys_created_on>
+        <sys_id>95e0f191db286f00ce704982ba9619d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 20:33:12</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_05e0f191db286f00ce704982ba96196d</table>
+        <value>{{action.button_text}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>channel</field>
+        <id>05e0f191db286f00ce704982ba96196d</id>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:12</sys_created_on>
+        <sys_id>11e0f191db286f00ce704982ba9619d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 20:33:12</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_05e0f191db286f00ce704982ba96196d</table>
+        <value>{{action.ah_channel}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>icon_emoji</field>
+        <id>05e0f191db286f00ce704982ba96196d</id>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:12</sys_created_on>
+        <sys_id>5de0f191db286f00ce704982ba9619d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 20:33:12</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_05e0f191db286f00ce704982ba96196d</table>
+        <value>{{action.ah_icon}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>message</field>
+        <id>05e0f191db286f00ce704982ba96196d</id>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:12</sys_created_on>
+        <sys_id>59e0f191db286f00ce704982ba9619d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 20:33:12</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_05e0f191db286f00ce704982ba96196d</table>
+        <value>{{action.ah_message}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>05e0f191db286f00ce704982ba96196d</id>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:12</sys_created_on>
+        <sys_id>95e0f191db286f00ce704982ba9619d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 20:33:12</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>username</field>
+        <id>05e0f191db286f00ce704982ba96196d</id>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:12</sys_created_on>
+        <sys_id>1de0f191db286f00ce704982ba9619d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 20:33:12</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_05e0f191db286f00ce704982ba96196d</table>
+        <value>{{action.ah_username}}</value>
+    </sys_element_mapping>
+</record_update>

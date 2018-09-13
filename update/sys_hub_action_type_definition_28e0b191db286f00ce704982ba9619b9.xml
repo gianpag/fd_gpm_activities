@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <annotation/>
+        <category display_value="Webhooks">e364e24b3ba0030057a4a2e334efc4e0</category>
+        <copied_from>099825d1dbe46f00ce704982ba961928</copied_from>
+        <copied_from_name>Post an Approval Request</copied_from_name>
+        <description>&lt;p&gt;Post an approval request to a Slack Channel using an &lt;a target="_blank" href="https://api.slack.com/incoming-webhooks"&gt;Inbound Webhook&lt;/a&gt;. Specify the Webhook URL and Message to send.&lt;p&gt;
+
+&lt;p&gt;Optional:&lt;br&gt;
+&lt;ul&gt;
+  &lt;li&gt;Additional Message: Add a message before the record details&lt;/li&gt;
+  &lt;li&gt;Override Default Fields: Provide a comma separated list of field names to send instead of the defaults e.g. type,risk,assigned_to&lt;/li&gt;
+&lt;li&gt;If you do not specify a Username, Channel, or Icon it will post the message using the defaults as configured in your WebHook. If you specify them here, they will override those defaults&lt;/li&gt;
+&lt;li&gt;The username does not need to be setup in Slack; however, the channel and icons must already exist .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;p&gt;Note: You can direct message an existing Slack user by specifying the user id e.g. @abel as the channel input.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: Requires a subscription for production use. &lt;a target="_blank" href="https://docs.servicenow.com/?context=CSHelp:IntegrationHub-licensing-information"&gt;Read More&lt;/a&gt;.&lt;/p&gt;</description>
+        <internal_name>post_an_approval_request_on_slack</internal_name>
+        <label_cache>[{"name":"{{action.ah_webhook_url}}","label":"action➛Webhook URL","type":"action","ref":""},{"name":"{{action.ah_username}}","label":"action➛Username","type":"action","ref":""},{"name":"{{action.ah_channel}}","label":"action➛Channel","type":"action","ref":""},{"name":"{{action.ah_icon}}","label":"action➛Icon","type":"action","ref":""},{"name":"{{action.ah_message}}","label":"action➛Message","type":"action","ref":""},{"name":"{{action.approval_link}}","label":"action➛Approval Link","type":"action","ref":""},{"name":"{{action.button_text}}","label":"action➛Button Text","type":"action","ref":""},{"name":"{{step[223a3faa-3f78-4fee-becf-63a2b084b0db].payload}}","label":"step➛Build Payload➛payload","type":"step","ref":""},{"name":"{{step[47f1f343-1dec-42f6-9c6b-631935801efe].status_code}}","label":"step➛Post Message➛Status Code","type":"step","ref":""},{"name":"{{step[47f1f343-1dec-42f6-9c6b-631935801efe].response_body}}","label":"step➛Post Message➛Response Body","type":"step","ref":""}]</label_cache>
+        <latest_snapshot>af5f3991dba86f00ce704982ba9619e6</latest_snapshot>
+        <master_snapshot>846f7991dba86f00ce704982ba9619a5</master_snapshot>
+        <name>Post an Approval Request on Slack</name>
+        <outputs/>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>gianpaolo.pagano</sys_created_by>
+        <sys_created_on>2018-09-13 20:33:08</sys_created_on>
+        <sys_id>28e0b191db286f00ce704982ba9619b9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Post an Approval Request on Slack</sys_name>
+        <sys_package display_value="Gianpaolo_Pagano_Custom_Activities" source="x_snc_gpm_act">d7be659ddbe46f00ce704982ba961927</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Gianpaolo_Pagano_Custom_Activities">d7be659ddbe46f00ce704982ba961927</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_28e0b191db286f00ce704982ba9619b9</sys_update_name>
+        <sys_updated_by>gianpaolo.pagano</sys_updated_by>
+        <sys_updated_on>2018-09-13 21:36:31</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=28e0b191db286f00ce704982ba9619b9"/>
+    <sys_variable_value action="delete_multiple" query="document_key=28e0b191db286f00ce704982ba9619b9"/>
+</record_update>
